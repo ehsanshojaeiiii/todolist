@@ -1,129 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px
-        }
 
-        .main {
-            border-top: 20px solid #333;
-            border-bottom: 20px solid #333;
-            border-left: 20px solid chocolate;
-            border-right: 20px solid chocolate;
-            margin: 200px auto;
-            width: 400px;
-            height: 400px;
-        }
-
-        .main div div {
-            float: left;
-            width: 50px;
-            height: 50px;
-        }
-
-        .main > div:nth-child(2n) > div:nth-child(2n-1) {
-            background-color: black;
-        }
-
-        .main > div:nth-child(2n-1) > div:nth-child(2n) {
-            background-color: black;
-        }
-
-        .main div div {
-            color: chocolate;
-            font-size: 30px;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-<div class="main">
+<h3>To Do</h3>
+<form method="POST" action="/">
+    {% csrf_token %}
+    {{ form.title }}
+    <input type="submit" name="Create Task" id="">
+</form>
+
+
+{% for task in tasks %}
     <div>
-        <div>&#x265C;</div>
-        <div>&#x265E;</div>
-        <div>&#x265D;</div>
-        <div>&#x265B;</div>
-        <div>&#x265A;</div>
-        <div>&#x265D;</div>
-        <div>&#x265E;</div>
-        <div>&#x265C;</div>
+        <p>{{ task }}</p>
     </div>
-    <div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-    </div>
-    <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-        <div>&#x265F;</div>
-    </div>
-    <div>
-        <div>&#x265C;</div>
-        <div>&#x265E;</div>
-        <div>&#x265D;</div>
-        <div>&#x265B;</div>
-        <div>&#x265A;</div>
-        <div>&#x265D;</div>
-        <div>&#x265E;</div>
-        <div>&#x265C;</div>
-    </div>
-</div>
+{% endfor %}
 </body>
 </html>
